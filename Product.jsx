@@ -18,9 +18,11 @@ import {
 } from 'lucide-react'
 import { getProductById, products } from '../data/products'
 import ProductCard from '../components/ProductCard'
+import { useCart } from '../context/CartContext'
 
 export default function Product() {
   const { id } = useParams()
+  const { addItem } = useCart()
   const [product, setProduct] = useState(null)
   const [quantity, setQuantity] = useState(1)
   const [selectedSize, setSelectedSize] = useState('')
@@ -52,6 +54,12 @@ export default function Product() {
 
   const handleQuantityChange = (change) => {
     setQuantity(Math.max(1, quantity + change))
+  }
+
+  const handleAddToCart = () => {
+    if (product) {
+      addItem(product, quantity, selectedSize)
+    }
   }
 
   const reviews = [
@@ -198,7 +206,11 @@ export default function Product() {
               {/* Actions */}
               <div className="space-y-4">
                 <div className="flex gap-4">
-                  <Button size="lg" className="flex-1 bg-secondary hover:bg-secondary/90">
+                  <Button
+                    size="lg"
+                    className="flex-1 bg-secondary hover:bg-secondary/90"
+                    onClick={handleAddToCart}
+                  >
                     <ShoppingCart className="mr-2 h-5 w-5" />
                     Adicionar ao Carrinho
                   </Button>
