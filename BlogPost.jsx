@@ -15,7 +15,7 @@ import {
   Linkedin,
   Copy
 } from 'lucide-react'
-import { getPostBySlug, getRelatedPosts } from '../data/blog'
+import { getPostBySlug, getRelatedPosts } from './blog'
 
 export default function BlogPost() {
   const { slug } = useParams()

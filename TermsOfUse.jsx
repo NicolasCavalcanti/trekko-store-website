@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Gavel, ShoppingBag, CheckCircle, CreditCard, RefreshCw } from "lucide-react"
 
 const TermsOfUse = () => {

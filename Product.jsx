@@ -16,8 +16,8 @@ import {
   Share2,
   MessageCircle
 } from 'lucide-react'
-import { getProductById, products } from '../data/products'
-import ProductCard from '../components/ProductCard'
+import { getProductById, products } from './products'
+import ProductCard from './ProductCard'
 
 export default function Product() {
   const { id } = useParams()

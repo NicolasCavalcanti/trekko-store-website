@@ -17,7 +17,7 @@ import {
   Mail,
   Phone
 } from 'lucide-react'
-import { useCart } from '../context/CartContext'
+import { useCart } from './CartContext'
 
 export default function Checkout() {
   const { items, getSubtotal, getShipping, getTotal, clearCart } = useCart()

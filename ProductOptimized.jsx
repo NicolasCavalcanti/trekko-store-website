@@ -19,8 +19,8 @@ import {
   Minus,
   ArrowLeft
 } from 'lucide-react'
-import { useCart } from '../context/CartContext'
-import productsOptimized from '../data/products_optimized'
+import { useCart } from './CartContext'
+import productsOptimized from './products_optimized'
 
 export default function ProductOptimized() {
   const { id } = useParams()

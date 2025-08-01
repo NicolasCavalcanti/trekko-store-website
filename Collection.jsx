@@ -5,8 +5,8 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Filter, Grid, List, SlidersHorizontal } from 'lucide-react'
-import ProductCard from '../components/ProductCard'
-import { getProductsByCategory, categories } from '../data/products'
+import ProductCard from './ProductCard'
+import { getProductsByCategory, categories } from './products'
 
 export default function Collection() {
   const { category } = useParams()

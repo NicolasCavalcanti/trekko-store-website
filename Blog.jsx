@@ -12,7 +12,7 @@ import {
   ArrowRight,
   Filter
 } from 'lucide-react'
-import { blogPosts, getFeaturedPosts, blogCategories } from '../data/blog'
+import { blogPosts, getFeaturedPosts, blogCategories } from './blog'
 
 export default function Blog() {
   const [searchTerm, setSearchTerm] = useState('')
