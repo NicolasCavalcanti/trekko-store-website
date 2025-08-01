@@ -24,7 +24,7 @@ import productsOptimized from '../data/products_optimized'
 
 export default function ProductOptimized() {
   const { id } = useParams()
-  const { addToCart } = useCart()
+  const { addItem } = useCart()
   const [product, setProduct] = useState(null)
   const [selectedImage, setSelectedImage] = useState(0)
   const [selectedSize, setSelectedSize] = useState('')
@@ -42,11 +42,7 @@ export default function ProductOptimized() {
 
   const handleAddToCart = () => {
     if (product && selectedSize) {
-      addToCart({
-        ...product,
-        selectedSize,
-        quantity
-      })
+      addItem(product, quantity, selectedSize)
     }
   }
 
