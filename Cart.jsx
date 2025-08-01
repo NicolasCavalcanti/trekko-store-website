@@ -14,7 +14,7 @@ import {
   CreditCard,
   Tag
 } from 'lucide-react'
-import { useCart } from '../context/CartContext'
+import { useCart } from './CartContext'
 import { useState } from 'react'
 
 export default function Cart() {

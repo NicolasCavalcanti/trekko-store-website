@@ -10,8 +10,8 @@ import {
   User,
   ChevronDown
 } from 'lucide-react'
-import { useCart } from '../context/CartContext'
-import TrekkoLogo from '../assets/images/logo/trekko_logo.png'
+import { useCart } from './CartContext'
+import TrekkoLogo from './trekko_logo.png'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

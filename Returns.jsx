@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { RefreshCw, Clock, Package, CheckCircle, AlertCircle, MessageSquare } from 'lucide-react'
 
 const Returns = () => {
