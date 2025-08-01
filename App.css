@@ -1,0 +1,451 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #F4E9DA; /* Areia Claro */
+  --foreground: #1D2F3A; /* Azul Escuro Noturno */
+  --card: #FFFFFF; /* Branco Neve */
+  --card-foreground: #1D2F3A; /* Azul Escuro Noturno */
+  --popover: #FFFFFF; /* Branco Neve */
+  --popover-foreground: #1D2F3A; /* Azul Escuro Noturno */
+  --primary: #4A6B47; /* Verde Musgo */
+  --primary-foreground: #FFFFFF; /* Branco Neve */
+  --secondary: #7B5E45; /* Marrom Terra */
+  --secondary-foreground: #FFFFFF; /* Branco Neve */
+  --muted: #F4E9DA; /* Areia Claro */
+  --muted-foreground: #7B5E45; /* Marrom Terra */
+  --accent: #FF6B35; /* Laranja Aventura */
+  --accent-foreground: #FFFFFF; /* Branco Neve */
+  --destructive: #DC3545; /* Vermelho Erro */
+  --border: #7B5E45; /* Marrom Terra */
+  --input: #F4E9DA; /* Areia Claro */
+  --ring: #4A6B47; /* Verde Musgo */
+  --chart-1: #4A6B47;
+  --chart-2: #7B5E45;
+  --chart-3: #FF6B35;
+  --chart-4: #1D2F3A;
+  --chart-5: #F4E9DA;
+  --sidebar: #1D2F3A;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #4A6B47;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #FF6B35;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #7B5E45;
+  --sidebar-ring: #4A6B47;
+}
+
+.dark {
+  --background: #1D2F3A;
+  --foreground: #F4E9DA;
+  --card: #1D2F3A;
+  --card-foreground: #F4E9DA;
+  --popover: #1D2F3A;
+  --popover-foreground: #F4E9DA;
+  --primary: #4A6B47;
+  --primary-foreground: #FFFFFF;
+  --secondary: #7B5E45;
+  --secondary-foreground: #FFFFFF;
+  --muted: #1D2F3A;
+  --muted-foreground: #F4E9DA;
+  --accent: #FF6B35;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC3545;
+  --border: #7B5E45;
+  --input: #1D2F3A;
+  --ring: #4A6B47;
+  --chart-1: #4A6B47;
+  --chart-2: #7B5E45;
+  --chart-3: #FF6B35;
+  --chart-4: #1D2F3A;
+  --chart-5: #F4E9DA;
+  --sidebar: #1D2F3A;
+  --sidebar-foreground: #F4E9DA;
+  --sidebar-primary: #4A6B47;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #FF6B35;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #7B5E45;
+  --sidebar-ring: #4A6B47;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Open Sans", sans-serif; /* Corpo de texto */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway", sans-serif; /* Títulos */
+  }
+}
+
+/* Importar fontes do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@700&display=swap");
+
+/* Animações customizadas */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+/* Hover effects */
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+
+
+
+/* Estilos específicos para página de produto otimizada */
+.product-optimized {
+  scroll-behavior: smooth;
+}
+
+/* Botões fixos mobile */
+.mobile-fixed-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  padding: 1rem;
+  z-index: 50;
+}
+
+@media (min-width: 768px) {
+  .mobile-fixed-buttons {
+    display: none;
+  }
+}
+
+/* Galeria de imagens */
+.product-gallery {
+  position: relative;
+}
+
+.product-gallery .image-navigation {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-gallery:hover .image-navigation {
+  opacity: 1;
+}
+
+/* Tabs de descrição */
+.description-tabs {
+  border-bottom: 1px solid var(--border);
+}
+
+.description-tab {
+  position: relative;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.description-tab.active {
+  border-bottom-color: var(--primary);
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* Animações para reviews */
+.review-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Upsell cards */
+.upsell-card {
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+}
+
+.upsell-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Selos de segurança */
+.security-seals {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 768px) {
+  .security-seals {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Indicadores de quantidade */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.quantity-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--background);
+  color: var(--foreground);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quantity-button:hover {
+  background: var(--muted);
+  border-color: var(--primary);
+}
+
+.quantity-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.75rem;
+  height: 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--card);
+  font-weight: 500;
+}
+
+/* Seletor de tamanhos */
+.size-selector {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.size-option {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--background);
+  color: var(--foreground);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 3rem;
+  text-align: center;
+}
+
+.size-option:hover {
+  border-color: var(--primary);
+}
+
+.size-option.selected {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* Modal de vídeo */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.video-modal-content {
+  background: var(--card);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 64rem;
+  width: 100%;
+}
+
+.video-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.video-modal-close {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.video-modal-close:hover {
+  background: var(--muted);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--primary);
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .product-gallery {
+    margin-bottom: 6rem; /* Espaço para botões fixos */
+  }
+  
+  .description-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .description-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .security-seals {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* Animação de fade in para elementos */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Efeito de loading para imagens */
+.image-loading {
+  background: linear-gradient(90deg, var(--muted) 25%, var(--background) 50%, var(--muted) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
