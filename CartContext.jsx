@@ -2,7 +2,7 @@ import { createContext, useContext, useReducer, useEffect } from 'react'
 
 const CartContext = createContext()
 
-const cartReducer = (state, action) => {
+export const cartReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_ITEM':
       const existingItem = state.items.find(item => 
@@ -61,7 +61,7 @@ const cartReducer = (state, action) => {
   }
 }
 
-const initialState = {
+export const initialState = {
   items: []
 }
 
