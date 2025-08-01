@@ -113,31 +113,36 @@ Cada coleção inclui:
 - **Lucide React**: Ícones
 
 ### Estrutura de Arquivos
+O projeto está organizado de forma plana, sem pastas `components/`, `pages/` ou
+`context/`. Todos os arquivos principais ficam na raiz do repositório.
 ```
-src/
-├── components/          # Componentes reutilizáveis
-│   ├── Layout.jsx      # Layout principal
-│   ├── Header.jsx      # Cabeçalho
-│   ├── Footer.jsx      # Rodapé
-│   └── ProductCard.jsx # Card de produto
-├── pages/              # Páginas da aplicação
-│   ├── Home.jsx        # Página inicial
-│   ├── About.jsx       # Sobre a marca
-│   ├── Collection.jsx  # Página de coleção
-│   ├── Product.jsx     # Página de produto
-│   ├── Blog.jsx        # Blog principal
-│   ├── BlogPost.jsx    # Artigo individual
-│   ├── Contact.jsx     # Contato
-│   ├── Cart.jsx        # Carrinho
-│   └── Checkout.jsx    # Finalização
-├── context/            # Contextos React
-│   └── CartContext.jsx # Contexto do carrinho
-├── data/               # Dados mockados
-│   ├── products.js     # Base de produtos
-│   └── blog.js         # Artigos do blog
-├── assets/             # Recursos estáticos
-│   └── images/         # Imagens organizadas por categoria
-└── App.jsx             # Componente principal
+App.jsx               # Componente principal
+Layout.jsx            # Layout geral
+Header.jsx            # Cabeçalho
+Footer.jsx            # Rodapé
+ProductCard.jsx       # Card de produto
+Home.jsx              # Página inicial
+About.jsx             # Sobre a marca
+Collection.jsx        # Página de coleção
+Product.jsx           # Página de produto
+ProductOptimized.jsx  # Página de produto otimizada
+Blog.jsx              # Blog principal
+BlogPost.jsx          # Artigo individual
+Contact.jsx           # Contato
+Cart.jsx              # Carrinho
+Checkout.jsx          # Finalização
+SizeGuide.jsx         # Guia de tamanhos
+Returns.jsx           # Política de trocas
+DeliveryPolicy.jsx    # Política de entrega
+PrivacyPolicy.jsx     # Política de privacidade
+TermsOfUse.jsx        # Termos de uso
+Chatbot.jsx           # Chatbot
+CartContext.jsx       # Contexto do carrinho
+products.js           # Base de produtos
+products_optimized.js # Dados de produtos otimizados
+blog.js               # Artigos do blog
+vite.config.js        # Configuração do Vite
+index.html            # HTML principal
 ```
 
 ## Paleta de Cores
