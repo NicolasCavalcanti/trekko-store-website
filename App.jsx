@@ -18,6 +18,7 @@ import PrivacyPolicy from './PrivacyPolicy'
 import TermsOfUse from './TermsOfUse'
 import Chatbot from './Chatbot'
 import './App.css'
+import Admin from './Admin'
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <Route path="carrinho" element={<Cart />} />
             <Route path="checkout" element={<Checkout />} />
           </Route>
+          <Route path="/admin" element={<Admin />} />
         </Routes>
         <Chatbot />
       </Router>
