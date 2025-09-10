@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trekko Admin</title>
+  <link rel="stylesheet" href="Admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <h2>Admin</h2>
+      <nav>
+        <ul>
+          <li>Dashboard</li>
+          <li>Usuários &amp; Guias</li>
+          <li>Trilhas</li>
+          <li>Expedições</li>
+          <li>Financeiro</li>
+          <li>CMS</li>
+          <li class="active">Integrações</li>
+          <li>Configurações</li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="admin-content">
+      <header class="admin-header">
+        <div class="breadcrumb">Integrações / Cadastur</div>
+        <h1>Cadastur (CSV)</h1>
+        <div class="actions">
+          <a class="button" href="#">Exportar CSV</a>
+          <span class="help" title="FAQ">?</span>
+        </div>
+      </header>
+
+      <section class="block">
+        <h2>Instruções &amp; Download de Template</h2>
+        <p>Envie um CSV UTF-8 com os headers corretos para substituir a base atual de guias.</p>
+        <div class="buttons">
+          <a class="button" href="#">Baixar Template CSV</a>
+          <a class="button" href="#">Baixar Base Atual</a>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Upload &amp; Validação</h2>
+        <div class="dropzone">Arraste e solte o arquivo aqui ou clique para selecionar (até 50MB)</div>
+        <div class="options">
+          <label><input type="checkbox"> Substituir base atual</label>
+          <label><input type="checkbox"> Desativar guias não presentes no novo CSV (soft delete)</label>
+        </div>
+        <button class="button">Validar arquivo</button>
+        <div class="preview">
+          <h3>Preview (primeiras 50 linhas)</h3>
+          <table>
+            <thead>
+              <tr><th>cadastur_id</th><th>nome</th><th>email</th><th>telefone</th><th>uf</th><th>cidade</th><th>idiomas</th><th>regioes</th><th>verificado</th><th>rating_avg</th><th>rating_count</th><th>url_site</th><th>url_instagram</th></tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="13">Pré-visualização será exibida aqui...</td></tr>
+            </tbody>
+          </table>
+          <div class="stats">Contagens por UF...</div>
+          <div class="errors">Erros por linha...</div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Resumo da Reconciliação (simulação)</h2>
+        <div class="summary-cards">
+          <div class="card">Novos: 0</div>
+          <div class="card">Atualizados: 0</div>
+          <div class="card">Sem mudança: 0</div>
+          <div class="card">A desativar: 0</div>
+        </div>
+        <div class="differences">
+          <h3>Tabela de diferenças detectadas</h3>
+          <table>
+            <thead>
+              <tr><th>Campo</th><th>Anterior</th><th>Novo</th></tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="3">Diferenças aparecerão aqui...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Execução</h2>
+        <button class="button" disabled>Executar Importação</button>
+        <div class="modal" hidden>
+          <p>Eu entendo que esta ação substituirá a base atual.</p>
+          <button class="button">Confirmar</button>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Resultado</h2>
+        <p>Após a execução, exibe resumo, IDs afetados e link para AuditLog.</p>
+        <button class="button">Desfazer (Rollback)</button>
+      </section>
+
+      <section class="block">
+        <h2>Histórico de Imports</h2>
+        <table class="history">
+          <thead>
+            <tr>
+              <th>Data/Hora</th>
+              <th>Ator</th>
+              <th>Novos</th>
+              <th>Atualizados</th>
+              <th>Desativados</th>
+              <th>Arquivo (hash)</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="8">Sem imports</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
